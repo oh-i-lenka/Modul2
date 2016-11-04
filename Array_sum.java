@@ -8,7 +8,7 @@ public class Array_sum {
         /*int[] array = new int[10];
         array [0] = 1;
         array [1] = 200;*/
-        int[] arrayInt={90, 900, 1, -1, 1, 1, -1, 701, -6, 9};
+        int[] arrayInt={79, 79, 79, -1, 1, 1, -1, 701, -6, 79};
         double[] arrayDouble= {1,2,89, 580, -85, 900, -9000, 0, 78, -789};
         /*int[] arrayInt = (int[]) arrayDouble;*/
        /* double[] arrayDouble = (double[]) array;*/
@@ -94,14 +94,22 @@ public class Array_sum {
 
     static void secondLargest (int array[]){
         int max, secMax;
-        if (array[0]>array[1]){
+        max = secMax = array [0];
+        int i = 1;
+        while (max == secMax) {
+            if (array[i] != max){
+                secMax = array[i];
+            }
+            i++;
+        }
+        /*if (array[0]>array[1]){
             max = array[0];
             secMax = array [1];
         } else {
             max = array[1];
             secMax = array [0];
-        }
-        for (int i=2; i<=9; i++){
+        }*/
+        for (i=2; i<=9; i++){
             if (max < array[i]){
                 secMax = max;
                 max = array[i];
